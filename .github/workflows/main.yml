@@ -26,5 +26,15 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: make all
+      - name: Create venv
+        run: make create_venv
+        
+      - name: Install requirements.txt
+        run: make install
+        
+      - name: Test Code
+        run: make test
+        
+#      - name: Cleanup
+#        run: make clean
+    
